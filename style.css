@@ -1,0 +1,194 @@
+/* style.css */
+
+body {
+    margin: 0;
+    padding: 0;
+    background-image: linear-gradient(rgb(41, 0, 128), rgb(41, 174, 198));
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+    font-family: 'Arial', sans-serif;
+}
+
+/* Centraliza o contêiner do jogo e dá uma borda ao redor */
+#game-container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+/* Estilo do canvas */
+canvas {
+    border: 2px solid #333;
+    background-color: #70c5ce;
+    display: block;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+/* Estilo do menu */
+.menu {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Título do jogo */
+.menu h1 {
+    font-size: 48px;
+    color: #fff;
+    margin-bottom: 40px;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Botões do menu */
+.menu button {
+    font-size: 18px;
+    color: #fff;
+    background-color: #6a8dff;
+    border: none;
+    padding: 15px 25px;
+    margin: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    width: 200px; /* Tamanho fixo para consistência */
+}
+
+.menu button:hover {
+    background-color: #4a6ff3;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
+}
+
+.menu button:active {
+    transform: translateY(2px);
+}
+
+/* Botões do "Game Over" */
+
+
+
+/* Estilo da pontuação */
+.score {
+    font-size: 30px;
+    color: #fff;
+    font-weight: bold;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    z-index: 1;
+}
+
+/* Função para centralizar o texto dentro de botões */
+button {
+    display: inline-block;
+    text-align: center;
+    vertical-align: middle;
+}
+
+/* Modal de seleção de skins */
+.skin-select {
+    text-align: center;
+    margin-top: 20px;
+}
+
+/* Caixa de texto de skins */
+.skin-select p {
+    font-size: 18px;
+    color: #fff;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Estilo dos botões de skin */
+.skin-select button {
+    font-size: 16px;
+    color: #fff;
+    background-color: #f7d03c;
+    border: none;
+    padding: 12px 20px;
+    margin: 5px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    width: 200px; /* Tamanho fixo para consistência */
+}
+
+.skin-select button:hover {
+    background-color: #f7b809;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+}
+
+.skin-select button:active {
+    transform: translateY(2px);
+}
+
+/* Estilo dos botões do Game Over */
+#gameOverMenu {
+    display: none; /* Esconde o menu de Game Over até o momento de exibição */
+    text-align: center;
+    margin-top: 20px;
+}
+
+#gameOverMenu button {
+    font-size: 18px;
+    color: white;
+    background-color: #6a8dff;
+    border: none;
+    padding: 15px 25px;
+    margin: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    width: 200px; /* Tamanho fixo para consistência */
+}
+
+#gameOverMenu button:hover {
+    background-color: #4a6ff3;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
+}
+
+#gameOverMenu button:active {
+    transform: translateY(2px);
+}
+
+/* Estilo do botão do Menu */
+.hidden {
+    display: none; /* Esconde elementos com a classe "hidden" */
+}
+
+/* Estilo do botão "Voltar ao Menu" */
+.back-to-menu {
+    font-size: 18px;
+    color: #fff;
+    background-color: #6a8dff;
+    border: none;
+    padding: 15px 25px;
+    margin: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+    width: 200px; /* Tamanho fixo para consistência */
+}
+
+.back-to-menu:hover {
+    background-color: #4a6ff3;
+    transform: translateY(-2px);background-color: #d68f15;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);      
+    
+}
+
+.back-to-menu:active {
+    transform: translateY(2px);
+}

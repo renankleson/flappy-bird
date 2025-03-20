@@ -25,6 +25,9 @@ let score = 0;
 let isMenu = true; // Track if we are in the menu
 let selectedSkin = 'bird'; // Variable to store selected skin
 
+// Carregar sons
+let coinSound = new Audio('coin.mp3');  // Som para passar pelo pipe
+let gameOverSound = new Audio('game-over.mp3');  // Som de game over
 
 // Load background image
 let backgroundImage = new Image();
@@ -207,10 +210,16 @@ function gameLoop() {
             }
         }
 
-        // Remove off-screen pipes and count score
+        // If the bird passes through a pipe, play the coin sound
+        if (pipe.x + pipeWidth < birdX && !pipe.passed) {
+            pipe.passed = true; // Mark this pipe as passed
+            coinSound.play(); // Play coin sound when passing through a pipe
+            score++;
+        }
+
+        // Remove off-screen pipes
         if (pipe.x + pipeWidth < 0) {
             pipes.shift();
-            score++;
         }
     }
 
@@ -227,13 +236,15 @@ function createPipe() {
     let topHeight = Math.floor(Math.random() * (canvas.height - pipeGap));
     pipes.push({
         x: canvas.width,
-        topHeight: topHeight
+        topHeight: topHeight,
+        passed: false // Add passed property to track if pipe has been passed
     });
 }
 
 // Game over function
 function gameOver() {
     isGameOver = true;
+    gameOverSound.play(); // Tocar som de game over
     ctx.fillStyle = 'orange';
     ctx.font = '50px Arial';
     ctx.fillText('Game Over', 60, canvas.height / 2);
